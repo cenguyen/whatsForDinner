@@ -10,6 +10,15 @@ red - #ee5253
 body {
     font-family: 'Roboto', sans-serif;
     background-image: url('/Users/saleae/Documents/Christine Coding/Turing/whats-for-dinner/assets/110074_00_2x.jpeg');
+    margin: 0;
+}
+
+.header {
+    background-color: #0fb9b1;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 16px;
 }
 
 
