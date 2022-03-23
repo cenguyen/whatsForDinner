@@ -82,9 +82,19 @@ function findMealValue () {
 }
 
 function displayMealOption() {
+    // styling notes: text should be centered justify and align
+    // you should make smaller text than chosen dish
+    // you should make is italicized
+    // chosen dish is large, possibly bolded with !
+
     cookPotImg.classList.add('hidden');
     let mealOption = generateDish();
-    mealResults.innerHTML = `<h3>You should make: </h3>
-    <h4>${mealOption}</h4>`;
+    mealResults.innerHTML = `<article class="make-this"><h3 class="you-should-make">You should make: </h3>
+    <h1>${mealOption}!</h1></article>`;
     console.log(mealResults);
 }
+
+// styling notes for entire meal
+// chosen dishes text smaller than original
+// "main dish" with a side of 
+// "side dish" and "dessert" for dessert!
