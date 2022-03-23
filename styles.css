@@ -48,4 +48,6 @@ ul {
     padding-inline-start: 0;
 }
 
-
+.hidden {
+    display: none!important;
+}

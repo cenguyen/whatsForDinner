@@ -48,10 +48,12 @@ let dessert = [
     "Eclairs"
 ]
 
-let whichMealOption = document.getElem
+//let whichMealOption = document.getElem
 let letsCookBtn = document.querySelector('.lets-cook-btn');
+let mealResults = document.querySelector('.display-meal');
+let cookPotImg = document.querySelector('.cook-pot-img');
 
-letsCookBtn.addEventListener('click', generateDish);
+letsCookBtn.addEventListener('click', displayMealOption);
 
 function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
@@ -61,13 +63,12 @@ function generateDish() {
     let mealoption = findMealValue();
     console.log(mealoption);
     if (mealoption === 'sides') {
-        console.log(sides[getRandomIndex(sides)]);
+        return sides[getRandomIndex(sides)];
     } else if (mealoption === 'main-dish') {
-        console.log(mains[getRandomIndex(mains)]);
+        return mains[getRandomIndex(mains)];
     } else if (mealoption === 'dessert') {
-        console.log(dessert[getRandomIndex(dessert)]);
+        return dessert[getRandomIndex(dessert)];
     }
-
 }
 
 function findMealValue () {
@@ -78,4 +79,12 @@ function findMealValue () {
             return checkRadio[i].value;
         }
     }
+}
+
+function displayMealOption() {
+    cookPotImg.classList.add('hidden');
+    let mealOption = generateDish();
+    mealResults.innerHTML = `<h3>You should make: </h3>
+    <h4>${mealOption}</h4>`;
+    console.log(mealResults);
 }
