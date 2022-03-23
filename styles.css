@@ -9,7 +9,7 @@ red - #ee5253
 */
 body {
     font-family: 'Roboto', sans-serif;
-    background-image: url('/Users/saleae/Documents/Christine Coding/Turing/whats-for-dinner/assets/burger-friends.jpg');
+    background-image: url('./assets/burger-friends.jpg');
     margin: 0;
     background-repeat: no-repeat;
     background-size: 100% 100%;
