@@ -7,35 +7,55 @@ grey - #95a5a6;
 red - #ee5253
 
 */
+html {
+    background: url('./assets/burger-friends.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    background-image: url('./assets/burger-friends.jpg');
     margin: 0;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
 }
 
 .header {
     background-color: #0fb9b1;
     display: flex;
     justify-content: space-between;
-    margin: 0;
     padding: 16px;
+    margin: 0;
+}
+
+.header-title {
+    margin: 0;
 }
 
 .lets-cook-btn {
     background-color: #0fb9b1;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin-top: 10px;
+}
+
+.add-recipe-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
 }
 
 .boxes {
     display: flex;
-    padding: 32px;
+    padding: 50px;
     justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
 }
 
 .dinner-options, .dinner-results {
     background-color: rgba(225, 225, 225, .9);
-    width: 300px;
+    width: 320px;
     height: 300px;
     padding: 32px;
     text-align: left;
@@ -64,7 +84,7 @@ ul {
     align-items: center;
 }
 
-h3 {
+.you-should-make {
     font-style: italic;
 }
 
