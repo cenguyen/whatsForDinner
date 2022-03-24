@@ -48,12 +48,19 @@ let dessert = [
     "Eclairs"
 ]
 
+let entireMealOptions = [];
+
 //let whichMealOption = document.getElem
 let letsCookBtn = document.querySelector('.lets-cook-btn');
 let mealResults = document.querySelector('.display-meal');
 let cookPotImg = document.querySelector('.cook-pot-img');
+let clearMealBtn = document.querySelector('.clear-meal-btn');
 
 letsCookBtn.addEventListener('click', displayMealOption);
+clearMealBtn.addEventListener('click', function() {
+    cookPotImg.classList.remove('hidden');
+    mealResults.classList.add('hidden');
+})
 
 function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
@@ -68,12 +75,16 @@ function generateDish() {
         return mains[getRandomIndex(mains)];
     } else if (mealoption === 'dessert') {
         return dessert[getRandomIndex(dessert)];
+    } else if (mealoption === 'entire meal') {
+        entireMealOptions.push(mains[getRandomIndex(mains)]);
+        entireMealOptions.push(sides[getRandomIndex(sides)]);
+        entireMealOptions.push(dessert[getRandomIndex(dessert)]);
+        return entireMealOptions;
     }
 }
 
 function findMealValue () {
     let checkRadio = document.getElementsByName('meal_option');
-
     for (let i = 0; i < checkRadio.length; i++) {
         if (checkRadio[i].checked) {
             return checkRadio[i].value;
@@ -86,11 +97,19 @@ function displayMealOption() {
     // you should make smaller text than chosen dish
     // you should make is italicized
     // chosen dish is large, possibly bolded with !
-
     cookPotImg.classList.add('hidden');
+    clearMealBtn.classList.remove('hidden');
+    mealResults.classList.remove('hidden');
     let mealOption = generateDish();
-    mealResults.innerHTML = `<article class="make-this"><h3 class="you-should-make">You should make: </h3>
-    <h1>${mealOption}!</h1></article>`;
+    console.log(mealOption);
+    if (Array.isArray(mealOption)) {
+        mealResults.innerHTML = `<article class="make-this"><h3 class="you-should-make">You should make: </h3>
+        <h3>${mealOption[0]} with a side of ${mealOption[1]} and ${mealOption[2]} for dessert!</h3></article>`;
+        entireMealOptions = [];
+    } else {
+        mealResults.innerHTML = `<article class="make-this"><h3 class="you-should-make">You should make: </h3>
+        <h1>${mealOption}!</h1></article>`;
+    }
     console.log(mealResults);
 }
 

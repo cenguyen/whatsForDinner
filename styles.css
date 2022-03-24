@@ -73,8 +73,9 @@ ul {
 }
 
 .dinner-results {
-    display: flex;
     justify-content: center;
+    flex-direction: column;
+    display: flex;
     align-items: center;
 }
 
@@ -91,6 +92,24 @@ ul {
 .make-this h1 {
     font-weight: bolder;
     font-size: 60px;
+    font-size: 5vw;
     margin: 5px;
     text-align: center;
+}
+
+.make-this h3 {
+    font-size: 5vw 3vh;
+    text-align: center;
+}
+
+
+.dinner-results button {
+    position: fixed;
+    right: 90px;
+    bottom: 480px;
+    color: white;
+    background-color: #95a5a6;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 10px;
 }
