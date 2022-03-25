@@ -86,6 +86,16 @@ ul {
     align-items: center;
 }
 
+.add-this h1, h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.you-added {
+    font-style: italic;
+}
+
 .you-should-make {
     font-style: italic;
 }
@@ -102,6 +112,13 @@ ul {
     text-align: center;
 }
 
+.add-this h1 {
+    font-weight: bolder;
+    font-size: 3vw;
+    margin: 5px;
+    text-align: center;
+}
+
 .dinner-results .clear-meal-div button {
     color: white;
     background-color: #95a5a6;
@@ -111,3 +128,30 @@ ul {
     transform: translate(100px, 50px);
 }
 
+.add-new-recipe-form {
+    background-color: rgba(225, 225, 225, .9);
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+}
+    
+.add-new-recipe-form button {
+    background-color: #0fb9b1;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin-top: 10px;
+}
+
+.add-new-recipe-form button {
+    background-color: #0fb9b1;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin-top: 10px;
+}
