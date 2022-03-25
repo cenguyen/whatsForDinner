@@ -86,6 +86,16 @@ ul {
     align-items: center;
 }
 
+.add-this h1, h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.you-added {
+    font-style: italic;
+}
+
 .you-should-make {
     font-style: italic;
 }
@@ -99,6 +109,13 @@ ul {
 
 .make-this h3 {
     font-size: 5vw 3vh;
+    text-align: center;
+}
+
+.add-this h1 {
+    font-weight: bolder;
+    font-size: 3vw;
+    margin: 5px;
     text-align: center;
 }
 
