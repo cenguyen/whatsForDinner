@@ -48,7 +48,11 @@
     </div>
     <div class="add-new-recipe-form">
       <label for="meal-option">Recipe Type:</label>
-      <input type="text" name="meal-option" id="meal-option">
+      <select name="meal-option" id="meal-option">
+          <option value="sides">Sides</option>
+          <option value="main">Main Dish</option>
+          <option value="dessert">Dessert</option>
+      </select>
       <label for="recipe-name">Recipe Name:</label>
       <input type="text" name="recipe-name" id="recipe-name">
       <button class="add-new-recipe">ADD NEW</button> 

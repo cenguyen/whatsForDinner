@@ -113,6 +113,14 @@ ul {
 
 .add-new-recipe-form {
     background-color: rgba(225, 225, 225, .9);
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
 }
     
 .add-new-recipe-form button {
