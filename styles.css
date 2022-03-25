@@ -111,3 +111,22 @@ ul {
     transform: translate(100px, 50px);
 }
 
+.add-new-recipe-form {
+    background-color: rgba(225, 225, 225, .9);
+}
+    
+.add-new-recipe-form button {
+    background-color: #0fb9b1;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin-top: 10px;
+}
+
+.add-new-recipe-form button {
+    background-color: #0fb9b1;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin-top: 10px;
+}
