@@ -19,7 +19,7 @@ body {
     margin: 0;
 }
 
-header {
+.header {
     background-color: #0fb9b1;
     display: flex;
     justify-content: space-between;

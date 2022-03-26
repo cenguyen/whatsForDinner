@@ -127,15 +127,21 @@ function displayMealOption() {
     showMealBox();
     let mealOption = generateDish();
     if (Array.isArray(mealOption)) {
-        showMealOption.innerHTML = `<article class="make-this"><h3 class="you-should-make">You should make: </h3>
-        <h3>${mealOption[0]} with a side of ${mealOption[1]} and ${mealOption[2]} for dessert!</h3></article>`;
+        showMealOption.innerHTML = 
+        `<article class="make-this"> 
+            <h3 class="you-should-make">You should make: </h3>
+            <h2>${mealOption[0]} with a side of ${mealOption[1]} and ${mealOption[2]} for dessert!</h2>
+        </article>`;
         entireMealOptions = [];
     } else if (!mealOption) {
         cookPotImg.classList.remove('hidden');
         clearMealBtn.classList.add('hidden');
     } else {
-        showMealOption.innerHTML = `<article class="make-this"><h3 class="you-should-make">You should make: </h3>
-        <h1>${mealOption}!</h1></article>`;
+        showMealOption.innerHTML = `
+        <article class="make-this">
+            <h3 class="you-should-make">You should make: </h3>
+            <h1>${mealOption}!</h1>
+        </article>`;
     }
 }
 
