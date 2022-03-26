@@ -4,25 +4,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
-    <!-- 
-      teal blue header
-        - left side "What's for Dinner" text
-        - right side 'ADD A RECIPE' button (gray, rounded edges)
-      background has picture
-      2 semi transparent boxes - space between?
-        - left box
-          "What are you looking for?"
-          button check (radio button) 4 options: Side, Main Dish, dDessert, Entire Meal
-          teal LET"S COOK button
-        - right box
-          cooking pit icon on load (user has not yet selected an option)
-          - Once user selects an option, 'You should make:' *random dish that fits the option they chose
-          - clear button
-    -->
-    <div class="header">
+    <header>
       <h3 class="header-title">What's for dinner?</h3>
       <button class="add-recipe-btn">ADD A RECIPE</button>
-    </div>
+    </header>
     <div class="boxes">
       <div class="dinner-options">
         <h4>What are you looking for?</h4>
@@ -40,7 +25,7 @@
       </div>
       <div class="dinner-results">
         <img class="cook-pot-img" src="./assets/cookpot.svg">
-        <article class="display-meal"></article>
+        <div class="display-meal"></div>
         <div class="clear-meal-div hidden">
           <button class="clear-meal-btn">CLEAR</button>
         </div>
@@ -48,13 +33,13 @@
     </div>
     <div class="add-new-recipe-form hidden">
       <label for="meal-option">Recipe Type:</label>
-      <select name="meal-option" id="meal-option">
+      <select name="meal-option" id="meal-option-input">
           <option value="sides">Sides</option>
           <option value="mains">Main Dish</option>
           <option value="dessert">Dessert</option>
       </select>
       <label for="recipe-name">Recipe Name:</label>
-      <input type="text" name="recipe-name" id="recipe-name">
+      <input type="text" name="recipe-name" id="recipe-name-input">
       <button class="add-new-recipe">ADD NEW</button> 
     </div>
   </body>

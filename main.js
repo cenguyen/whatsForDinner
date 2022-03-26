@@ -50,21 +50,24 @@ let dessert = [
 
 let entireMealOptions = [];
 
-//let whichMealOption = document.getElem
-let letsCookBtn = document.querySelector('.lets-cook-btn');
-let mealResults = document.querySelector('.display-meal');
-let addARecipeTopBtn = document.querySelector('.add-recipe-btn');
+// button variables
+let letsCookBtn = document.querySelector('.lets-cook-btn'); // generate a meal
+let addARecipeTopBtn = document.querySelector('.add-recipe-btn'); // toggles add recipe form
+let clearMealBtn = document.querySelector('.clear-meal-div'); // clear btn
+let addNewRecipeBtn = document.querySelector('.add-new-recipe'); // adds a recipe (user input)
+
+let mealResults = document.querySelector('.display-meal'); 
+let addRecipeForm = document.querySelector('.add-new-recipe-form');
+
 let cookPotImg = document.querySelector('.cook-pot-img');
-let clearMealBtn = document.querySelector('.clear-meal-div');
-let mealTypeOption = document.querySelector('#meal-option');
-let recipeNameInput = document.querySelector('#recipe-name');
-let addRecipeForm = document.querySelector('.add-new-recipe-form')
-let addNewRecipeBtn = document.querySelector('.add-new-recipe');
+
+let mealTypeInput = document.querySelector('#meal-option-input');
+let recipeNameInput = document.querySelector('#recipe-name-input');
+
 
 letsCookBtn.addEventListener('click', displayMealOption);
 
 addARecipeTopBtn.addEventListener('click', function() {
-    console.log('is this working');
     addRecipeForm.classList.toggle('hidden');
 })
 
@@ -81,20 +84,19 @@ function getRandomIndex(array) {
   }
 
 function generateDish() {
-    let mealoption = findMealValue();
-    console.log(mealoption);
-    if (mealoption === 'sides') {
+    let mealChoice = findMealValue();
+    if (mealChoice === 'sides') {
         return sides[getRandomIndex(sides)];
-    } else if (mealoption === 'main-dish') {
+    } else if (mealChoice === 'main-dish') {
         return mains[getRandomIndex(mains)];
-    } else if (mealoption === 'dessert') {
+    } else if (mealChoice === 'dessert') {
         return dessert[getRandomIndex(dessert)];
-    } else if (mealoption === 'entire meal') {
+    } else if (mealChoice === 'entire meal') {
         entireMealOptions.push(mains[getRandomIndex(mains)]);
         entireMealOptions.push(sides[getRandomIndex(sides)]);
         entireMealOptions.push(dessert[getRandomIndex(dessert)]);
         return entireMealOptions;
-    } else if (!mealoption) {
+    } else if (!mealChoice) {
         alert('Pick something')
     }
 }
@@ -127,21 +129,19 @@ function displayMealOption() {
 }
 
 function addNewRecipe() {
-    let mealType = mealTypeOption.value;
-    let recipeNameValue = recipeNameInput.value;
-    let recipeName = recipeNameValue.charAt(0).toUpperCase() + recipeNameValue.slice(1);
-    console.log(mealType, recipeName);
-    if (mealType === 'sides') {
+    let mealTypeVal = mealTypeInput.value;
+    let recipeNameVal = recipeNameInput.value;
+    let recipeName = recipeNameVal.charAt(0).toUpperCase() + recipeNameVal.slice(1);
+    if (mealTypeVal === 'sides') {
         sides.push(recipeName);
-    } else if (mealType === 'mains') {
+    } else if (mealTypeVal === 'mains') {
         mains.push(recipeName);
-    } else if (mealType === 'dessert') {
+    } else if (mealTypeVal === 'dessert') {
         dessert.push(recipeName);
     }
     cookPotImg.classList.add('hidden');
     clearMealBtn.classList.remove('hidden');
     mealResults.classList.remove('hidden');
     mealResults.innerHTML = `<article class="add-this"><h3 class="you-added">You added: </h3>
-    <h1>${recipeName} to ${mealType}!</h1></article>`;
-    console.log(mealResults);
+    <h1>${recipeName} to ${mealTypeVal}!</h1></article>`;
 }
