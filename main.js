@@ -145,22 +145,26 @@ function displayMealOption() {
     }
 }
 
+
 function addNewRecipe() {
     let mealTypeVal = inputMealType.value;
     let recipeNameVal = inputRecipeName.value;
     let recipeName = recipeNameVal.charAt(0).toUpperCase() + recipeNameVal.slice(1);
-    ((mealTypeVal === 'sides') && (!sides.includes(recipeName)) 
-        ? sides.push(recipeName) 
+    (!recipeName) ? alert('Please add a recipe')
+        : ((mealTypeVal === 'sides') && (!sides.includes(recipeName)) 
+        ? (sides.push(recipeName), newFunction())
         : ((mealTypeVal === 'mains') && (!mains.includes(recipeName))
-        ? mains.push(recipeName)
+        ? (mains.push(recipeName), newFunction())
         : ((mealTypeVal === 'dessert') && (!dessert.includes(recipeName))
-        ? dessert.push(recipeName)
+        ? (dessert.push(recipeName), newFunction())
         : alert('This recipe already exists'))));
-    showMealBox();
-    showMealOption.innerHTML = `
+
+    function newFunction() {
+        showMealBox();
+        showMealOption.innerHTML = `
         <article class="show-new-recipe-text">
             <h3>You added: </h3>
             <h1>${recipeName} to ${mealTypeVal}!</h1>
         </article>`;
-    console.log(sides);
+    }
 }

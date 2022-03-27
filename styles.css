@@ -54,7 +54,7 @@ header {
     position: relative;
 }
 
-.dinner-options, .dinner-results {
+.meal-options, .meal-results {
     background-color: rgba(225, 225, 225, .9);
     width: 320px;
     height: 300px;
@@ -73,7 +73,7 @@ ul {
     display: none!important;
 }
 
-.dinner-results {
+.meal-results {
     justify-content: center;
     flex-direction: column;
     display: flex;
@@ -124,7 +124,7 @@ ul {
     text-align: center;
 }
 
-.dinner-results .clear-meal-div button {
+.meal-results .clear-meal-div button {
     color: white;
     background-color: #95a5a6;
     border: none;
