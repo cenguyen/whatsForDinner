@@ -19,7 +19,7 @@ body {
     margin: 0;
 }
 
-.header {
+header {
     background-color: #0fb9b1;
     display: flex;
     justify-content: space-between;
@@ -51,6 +51,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     gap: 50px;
+    position: relative;
 }
 
 .dinner-options, .dinner-results {
@@ -80,39 +81,43 @@ ul {
 
 }
 
-.make-this h3, h1 {
+.show-meal-option-text h3, h1 {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.add-this h1, h3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.you-added {
-    font-style: italic;
-}
-
-.you-should-make {
-    font-style: italic;
-}
-
-.make-this h1 {
+.show-meal-option-text h1 {
     font-weight: bolder;
     font-size: 2vw;
     margin: 5px;
     text-align: center;
 }
 
-.make-this h3 {
-    font-size: 5vw 3vh;
+.show-meal-option-text h2 {
+    font-weight: bolder;
+    margin: 5px;
     text-align: center;
+    font-size: 2vw 1vh;
 }
 
-.add-this h1 {
+.show-meal-option-text h3 {
+    font-size: 5vw 3vh;
+    text-align: center;
+    font-style: italic;
+}
+
+.show-new-recipe-text h1, h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-new-recipe-text h3 {
+    font-style: italic;
+}
+
+.show-new-recipe-text h1 {
     font-weight: bolder;
     font-size: 2vw;
     margin: 5px;
@@ -126,6 +131,7 @@ ul {
     border-radius: 2px;
     padding: 10px 10px;
     transform: translate(100px, 50px);
+    position: relative;
 }
 
 .add-new-recipe-form {
@@ -140,14 +146,6 @@ ul {
     align-items: center;
 }
     
-.add-new-recipe-form button {
-    background-color: #0fb9b1;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 50px;
-    margin-top: 10px;
-}
-
 .add-new-recipe-form button {
     background-color: #0fb9b1;
     border: none;
