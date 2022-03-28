@@ -53,11 +53,12 @@ let entireMealOptions = [];
 // button variables
 let letsCookBtn = document.querySelector('.lets-cook-btn'); // generate a meal
 let showAddRecipeFromBtn = document.querySelector('.add-recipe-btn'); // toggles add recipe form
-let clearMealBtn = document.querySelector('.clear-meal-div'); // clear btn
+let clearMealBtn = document.querySelector('.clear-meal-btn'); // clear btn
 let addNewRecipeBtn = document.querySelector('.add-new-recipe'); // adds a recipe (user input)
 
 let showMealOption = document.querySelector('.display-meal'); 
 let addNewRecipeForm = document.querySelector('.add-new-recipe-form');
+let mealResultText = document.querySelector('.meal-result-text');
 
 let cookPotImg = document.querySelector('.cook-pot-img');
 
@@ -127,21 +128,12 @@ function displayMealOption() {
     showMealBox();
     let mealOption = generateDish();
     if (Array.isArray(mealOption)) {
-        showMealOption.innerHTML = 
-        `<article class="show-meal-option-text"> 
-            <h3>You should make: </h3>
-            <h2>${mealOption[0]} with a side of ${mealOption[1]} and ${mealOption[2]} for dessert!</h2>
-        </article>`;
+        mealResultText.textContent = `${mealOption[0]} with a side of ${mealOption[1]} and ${mealOption[2]} for dessert!`;
         entireMealOptions = [];
     } else if (!mealOption) {
-        cookPotImg.classList.remove('hidden');
-        clearMealBtn.classList.add('hidden');
+        showCookPot();
     } else {
-        showMealOption.innerHTML = `
-        <article class="show-meal-option-text">
-            <h3>You should make: </h3>
-            <h1>${mealOption}!</h1>
-        </article>`;
+        mealResultText.textContent = `${mealOption}!`;
     }
 }
 
