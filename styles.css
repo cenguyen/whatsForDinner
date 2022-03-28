@@ -124,14 +124,15 @@ ul {
     text-align: center;
 }
 
-.meal-results .clear-meal-div button {
+.clear-meal-btn {
     color: white;
     background-color: #95a5a6;
     border: none;
     border-radius: 2px;
     padding: 10px 10px;
-    transform: translate(100px, 50px);
-    position: relative;
+    align-self: flex-end;
+    justify-self: flex-end;
+    margin-top: 40px;
 }
 
 .add-new-recipe-form {
@@ -153,3 +154,10 @@ ul {
     padding: 10px 50px;
     margin-top: 10px;
 }
+
+@media screen and (max-width: 600px) {
+    .boxes {
+      flex-direction: column;
+    }
+  }
+
