@@ -128,8 +128,8 @@ function displayMealOption() {
     let mealOption = generateDish();
     if (Array.isArray(mealOption)) {
         showMealOption.innerHTML = 
-        `<article class="make-this"> 
-            <h3 class="you-should-make">You should make: </h3>
+        `<article class="show-meal-option-text"> 
+            <h3>You should make: </h3>
             <h2>${mealOption[0]} with a side of ${mealOption[1]} and ${mealOption[2]} for dessert!</h2>
         </article>`;
         entireMealOptions = [];
@@ -138,26 +138,33 @@ function displayMealOption() {
         clearMealBtn.classList.add('hidden');
     } else {
         showMealOption.innerHTML = `
-        <article class="make-this">
-            <h3 class="you-should-make">You should make: </h3>
+        <article class="show-meal-option-text">
+            <h3>You should make: </h3>
             <h1>${mealOption}!</h1>
         </article>`;
     }
 }
 
+
 function addNewRecipe() {
     let mealTypeVal = inputMealType.value;
     let recipeNameVal = inputRecipeName.value;
     let recipeName = recipeNameVal.charAt(0).toUpperCase() + recipeNameVal.slice(1);
-    if (mealTypeVal === 'sides') {
-        sides.push(recipeName);
-    } else if (mealTypeVal === 'mains') {
-        mains.push(recipeName);
-    } else if (mealTypeVal === 'dessert') {
-        dessert.push(recipeName);
+    (!recipeName) ? alert('Please add a recipe')
+        : ((mealTypeVal === 'sides') && (!sides.includes(recipeName)) 
+        ? (sides.push(recipeName), newFunction())
+        : ((mealTypeVal === 'mains') && (!mains.includes(recipeName))
+        ? (mains.push(recipeName), newFunction())
+        : ((mealTypeVal === 'dessert') && (!dessert.includes(recipeName))
+        ? (dessert.push(recipeName), newFunction())
+        : alert('This recipe already exists'))));
+
+    function newFunction() {
+        showMealBox();
+        showMealOption.innerHTML = `
+        <article class="show-new-recipe-text">
+            <h3>You added: </h3>
+            <h1>${recipeName} to ${mealTypeVal}!</h1>
+        </article>`;
     }
-    showMealBox();
-    showMealOption.innerHTML = `<article class="add-this"><h3 class="you-added">You added: </h3>
-    <h1>${recipeName} to ${mealTypeVal}!</h1></article>`;
-    console.log(sides);
 }
